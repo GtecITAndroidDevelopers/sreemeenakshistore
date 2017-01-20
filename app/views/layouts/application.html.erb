@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ta">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+          
+  <%= csrf_meta_tags %>
+</head>
+<body class="tamil">
+<nav style="background-color: #2ecc71;"><div class="nav-wrapper"><a href="#" class="brand-logo center">SreeMeenakshi Fruits</a></div></nav></br></br>
+<div class="container">           
+<%= yield %>
+</div>
+</body>
+</html>

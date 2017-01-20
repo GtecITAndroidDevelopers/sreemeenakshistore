@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+<% @products.each do |product| %>
+  <div class="w3-content w3-section">
+    <div class="mySlides w3-animate-fading">
+      <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <%= raw(image_tag product.url) %>
+
+              <span class="green-text"><b><%= product.name %></b></span>
+              <p class="red-text">Rs. <%= product.price %></p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel,5000);    
+}
+</script>
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<%= link_to 'New Product', new_product_path %>
+<h3>Import Products</h3>
+<%= form_tag import_products_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload Products", class: 'btn btn-default' %>
+<% end %>
+
+<h3>Download File</h3>
+<%= link_to "Report", products_path(format: "csv"), class: 'btn btn-default' %>
+
